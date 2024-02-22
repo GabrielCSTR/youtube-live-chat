@@ -22,7 +22,7 @@ This function is essential for moderating chat, answering questions and integrat
     ```
     - Typescript
     ```typescript
-    import { YoutubeLiveChat } from "youtube-chat"
+    import { YoutubeLiveChat } from "yt-live-stream"
     ```
 3. Create instance with ChannelID or LiveID
     ```javascript
