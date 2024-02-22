@@ -2,6 +2,7 @@ import { EventEmitter } from "events"
 import TypedEmitter from "typed-emitter"
 import { ChatMessage, YoutubeId } from "./types/data"
 import { fetchChat, fetchLivePage } from "./utils/request"
+import { FetchOptions } from "./types/yt-response"
 
 type LiveChatEvents = {
   start: (liveId: string) => void
@@ -13,7 +14,7 @@ type LiveChatEvents = {
 export class YoutubeLiveChat extends (EventEmitter as new () => TypedEmitter<LiveChatEvents>) {
   liveId?: string;
   observer?: NodeJS.Timeout | undefined;
-  options?: any;
+  options?: FetchOptions;
   readonly interval: number = 1000;
   readonly id: any;
   constructor(id: YoutubeId, interval = 1000) {

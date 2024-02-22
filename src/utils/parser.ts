@@ -58,7 +58,7 @@ import {
     }
   }
   
-  /** get_live_chat レスポンスを変換 */
+  /** Convert get_live_chat response */
   export function parseChatData(data: GetLiveChatResponse): [ChatMessage[], string] {
     let chatMessage: ChatMessage[] = []
     if (data.continuationContents.liveChatContinuation.actions) {
@@ -78,7 +78,7 @@ import {
     return [chatMessage, continuation]
   }
   
-  /** サムネイルオブジェクトをImageItemへ変換 */
+  /** Convert thumbnail object to ImageItem */
   function parseThumbnailToImageItem(data: Thumbnail[], alt: string): ImageItem {
     const thumbnail = data.pop()
     if (thumbnail) {
@@ -98,7 +98,7 @@ import {
     return `#${colorNum.toString(16).slice(2).toLocaleUpperCase()}`
   }
   
-  /** メッセージrun配列をMessageItem配列へ変換 */
+  /** Convert message run array to MessageItem array */
   function parseMessages(runs: MessageRun[]): MessageItem[] {
     return runs.map((run: MessageRun): MessageItem => {
       if ("text" in run) {
@@ -118,7 +118,7 @@ import {
     })
   }
   
-  /** actionの種類を判別してRendererを返す */
+  /** Determine the action type and return Renderer */
   function rendererFromAction(
     action: Action
   ):

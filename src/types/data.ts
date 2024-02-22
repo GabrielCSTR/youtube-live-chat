@@ -24,7 +24,7 @@ export interface ChatMessage {
 
   export type MessageItem = { text: string } | EmojiItem
 
-/** 画像 */
+/** Image */
 export interface ImageItem {
   url: string
   alt: string
