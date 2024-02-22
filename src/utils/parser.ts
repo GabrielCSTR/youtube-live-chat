@@ -9,7 +9,7 @@ import {
     MessageRun,
     Thumbnail,
   } from "../types/yt-response"
-  import { ChatItem, ImageItem, MessageItem } from "../types/data"
+  import { ChatMessage, ImageItem, MessageItem } from "../types/data"
   
   export function getOptionsFromLivePage(data: string): FetchOptions & { liveId: string } {
     let liveId: string
@@ -59,12 +59,12 @@ import {
   }
   
   /** get_live_chat レスポンスを変換 */
-  export function parseChatData(data: GetLiveChatResponse): [ChatItem[], string] {
-    let chatItems: ChatItem[] = []
+  export function parseChatData(data: GetLiveChatResponse): [ChatMessage[], string] {
+    let chatMessage: ChatMessage[] = []
     if (data.continuationContents.liveChatContinuation.actions) {
-      chatItems = data.continuationContents.liveChatContinuation.actions
+      chatMessage = data.continuationContents.liveChatContinuation.actions
         .map((v: any) => parseActionToChatItem(v))
-        .filter((v: any): v is NonNullable<ChatItem> => v !== null)
+        .filter((v: any): v is NonNullable<ChatMessage> => v !== null)
     }
   
     const continuationData = data.continuationContents.liveChatContinuation.continuations[0]
@@ -75,7 +75,7 @@ import {
       continuation = continuationData.timedContinuationData.continuation
     }
   
-    return [chatItems, continuation]
+    return [chatMessage, continuation]
   }
   
   /** サムネイルオブジェクトをImageItemへ変換 */
@@ -143,8 +143,8 @@ import {
     return null
   }
   
-  /** an action to a ChatItem */
-  function parseActionToChatItem(data: Action): ChatItem | null {
+  /** an action to a ChatMessage */
+  function parseActionToChatItem(data: Action): ChatMessage | null {
     const messageRenderer = rendererFromAction(data)
     if (messageRenderer === null) {
       return null
@@ -157,7 +157,7 @@ import {
     }
   
     const authorNameText = messageRenderer.authorName?.simpleText ?? ""
-    const ret: ChatItem = {
+    const ret: ChatMessage = {
       id: messageRenderer.id,
       author: {
         name: authorNameText,

@@ -1,12 +1,12 @@
 import { EventEmitter } from "events"
 import TypedEmitter from "typed-emitter"
-import { ChatItem, YoutubeId } from "./types/data"
+import { ChatMessage, YoutubeId } from "./types/data"
 import { fetchChat, fetchLivePage } from "./utils/request"
 
 type LiveChatEvents = {
   start: (liveId: string) => void
   end: (reason?: string) => void
-  chat: (chatItem: ChatItem) => void
+  chat: (chatMessage: ChatMessage) => void
   error: (err: Error | unknown) => void
 }
 

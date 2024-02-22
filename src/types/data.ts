@@ -1,4 +1,4 @@
-export interface ChatItem {
+export interface ChatMessage {
     id: string
     author: {
       name: string

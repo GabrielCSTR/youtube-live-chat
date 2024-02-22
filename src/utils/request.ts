@@ -1,9 +1,9 @@
 import axios from "axios"
-import { ChatItem, YoutubeId } from "../types/data"
+import { ChatMessage, YoutubeId } from "../types/data"
 import { FetchOptions } from "../types/yt-response"
 import { getOptionsFromLivePage, parseChatData } from "./parser"
 
-export async function fetchChat(options: FetchOptions): Promise<[ChatItem[], string]> {
+export async function fetchChat(options: FetchOptions): Promise<[ChatMessage[], string]> {
     const url = `https://www.youtube.com/youtubei/v1/live_chat/get_live_chat?key=${options.apiKey}`
     const res = await axios.post(url, {
       context: {
