@@ -1,8 +1,7 @@
-# yt-live-stream
-[![npm version](https://badge.fury.io/js/yt-live-stream.svg)](https://badge.fury.io/js/yt-live-stream)
-![npm](https://img.shields.io/npm/dt/yt-live-stream)
-![NPM](https://img.shields.io/npm/l/yt-live-stream)
-[![CI](https://github.com/GabrielCSTR/yt-live-stream/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/GabrielCSTR/yt-live-stream/actions/workflows/ci.yml)
+# yt-chat-stream
+[![npm version](https://badge.fury.io/js/yt-chat-stream.svg)](https://badge.fury.io/js/yt-chat-stream)
+![npm](https://img.shields.io/npm/dt/yt-chat-stream)
+![NPM](https://img.shields.io/npm/l/yt-chat-stream)
 
 > Retrieve YouTube Live Chat Messages
 
@@ -13,16 +12,16 @@ This function is essential for moderating chat, answering questions and integrat
 
 ## Getting started
 1. Install
-    - `npm i yt-live-stream`
-    - `yarn add yt-live-stream`
+    - `npm i yt-chat-stream`
+    - `yarn add yt-chat-stream`
 2. Import
     - Javascript
     ```javascript
-    const { YoutubeLiveChat } = require("yt-live-stream")
+    const { YoutubeLiveChat } = require("yt-chat-stream")
     ```
     - Typescript
     ```typescript
-    import { YoutubeLiveChat } from "yt-live-stream"
+    import { YoutubeLiveChat } from "yt-chat-stream"
     ```
 3. Create instance with ChannelID or LiveID
     ```javascript

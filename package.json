@@ -1,9 +1,9 @@
 {
-  "name": "yt-live-stream",
+  "name": "yt-chat-stream",
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/GabrielCSTR/yt-live-stream",
+  "repository": "https://github.com/GabrielCSTR/yt-chat-stream",
   "author": "Gabriel Carlos <gabriel.developed@gmail.com>",
   "license": "MIT",
   "private": false,
